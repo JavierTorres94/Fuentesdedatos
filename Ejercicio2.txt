@@ -1,0 +1,24 @@
+Microsoft Windows [Versión 10.0.19045.2965]
+(c) Microsoft Corporation. Todos los derechos reservados.
+
+C:\Users\DELL>sqlite3 ejercicio2.db
+SQLite version 3.42.0 2023-05-16 12:36:15
+Enter ".help" for usage hints.
+sqlite> create table registro(id integer, fecha text, distancia float, duracion integer);
+sqlite> insert into registro values(12, '2023-05-20',32.3,23);
+sqlite> insert into registro values(123, '1993-1-28',13,233);
+sqlite> insert into registro values(345, '1997-08-8',32.3,23);
+sqlite> insert into registro values(34, '1995-07-10',123.5,34);
+sqlite> select * from registro;
+12|2023-05-20|32.3|23
+123|1993-1-28|13.0|233
+345|1997-08-8|32.3|23
+34|1995-07-10|123.5|34
+sqlite> insert into registro values(33, '1999-08,09',234.3,98);
+sqlite> select * from registro;
+12|2023-05-20|32.3|23
+123|1993-1-28|13.0|233
+345|1997-08-8|32.3|23
+34|1995-07-10|123.5|34
+33|1999-08,09|234.3|98
+sqlite>

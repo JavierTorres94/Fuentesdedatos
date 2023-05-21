@@ -1,0 +1,53 @@
+Microsoft Windows [Versión 10.0.19045.2965]
+(c) Microsoft Corporation. Todos los derechos reservados.
+
+C:\Users\DELL>sqlite3 agenda.db
+SQLite version 3.42.0 2023-05-16 12:36:15
+Enter ".help" for usage hints.
+sqlite> create table contactos(
+(x1...> id_registro INTEGER PRIMARY KEY AUTOINCREMENT,
+(x1...> nombre varchar(50) NOT NULL,
+(x1...> apellidos varchar(50) NOT NULL,
+(x1...> edad INTEGER);
+sqlite> INSERT INTO contactos(nombre, apellidos, edad) VALUES("Juancha",
+(x1...> "Perez Juarez",23);
+Parse error: no such column: Juancha
+  RT INTO contactos(nombre, apellidos, edad) VALUES("Juancha", "Perez Juarez",23
+                                      error here ---^
+sqlite> INSERT INTO contactos(nombre, apellidos, edad) VALUES('Juancha',
+(x1...> 'Perez Juarez',23);
+sqlite> INSERT INTO contactos(nombre, apellidos, edad) VALUES('Pedro',
+(x1...> 'Ruiz Ortiz',30);
+sqlite> INSERT INTO contactos(nombre, apellidos, edad) VALUES('Jose',
+(x1...> 'Catro Ortiz',40);
+sqlite> INSERT INTO contactos(nombre, apellidos, edad) VALUES('Mario',
+(x1...> 'Morales Cervantes',23);
+sqlite> INSERT INTO contactos(nombre, apellidos, edad) VALUES('Gonzalo',
+(x1...> 'Camacho Mendez',60);
+sqlite> select * FROM contactos;
+1|Juancha|Perez Juarez|23
+2|Pedro|Ruiz Ortiz|30
+3|Jose|Catro Ortiz|40
+4|Mario|Morales Cervantes|23
+5|Gonzalo|Camacho Mendez|60
+sqlite> UPDATE contactos SET nombre='Federica' WHERE nombre='Juancha';
+sqlite> SELECT * FROM contactos;
+1|Federica|Perez Juarez|23
+2|Pedro|Ruiz Ortiz|30
+3|Jose|Catro Ortiz|40
+4|Mario|Morales Cervantes|23
+5|Gonzalo|Camacho Mendez|60
+sqlite> DELETE FROM contactos WHERE nombre='Federica';
+sqlite> SELECT * FROM contactos;
+2|Pedro|Ruiz Ortiz|30
+3|Jose|Catro Ortiz|40
+4|Mario|Morales Cervantes|23
+5|Gonzalo|Camacho Mendez|60
+sqlite> SELECT nombre FROM contactos;
+Pedro
+Jose
+Mario
+Gonzalo
+sqlite> SELECT * FROM contactos WHERE edad='23';
+4|Mario|Morales Cervantes|23
+sqlite>

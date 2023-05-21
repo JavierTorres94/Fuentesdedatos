@@ -1,0 +1,15 @@
+Microsoft Windows [Versión 10.0.19045.2965]
+(c) Microsoft Corporation. Todos los derechos reservados.
+
+C:\Users\DELL>sqlite3 Prueba.db
+SQLite version 3.42.0 2023-05-16 12:36:15
+Enter ".help" for usage hints.
+sqlite> create table temperatura(id integer, temp float, fecha text);
+sqlite> insert into temperatura values (1, 22.1, '2016-11-18');
+sqlite> insert into temperatura values (2, 15, '2013-12-25');
+sqlite> insert into temperatura values (3, 32, '2009-06-01');
+sqlite> select * from temperatura;
+1|22.1|2016-11-18
+2|15.0|2013-12-25
+3|32.0|2009-06-01
+sqlite>
